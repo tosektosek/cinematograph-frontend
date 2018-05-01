@@ -1,7 +1,8 @@
-.movie-image {
-  height: 278px;
-  width:220px;
+.movie-image{
+  height: 100%;
+  width:100%;
 }
+
 
 .container {
   margin-top: 10px;
