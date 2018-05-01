@@ -10,13 +10,24 @@ import {Movie} from '../movie.model';
 })
 export class MovieDetailsComponent implements OnInit {
 
-  movie: Movie;
+  movie: Movie = new Movie('', '', [], '', '', 0, 0, 0, 0, 0, [], [], [], );
   constructor(private movieService: MovieService,
               private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.movieService.getMovieByTitle(this.route.snapshot.params['title']).subscribe(
-      (movie: Movie) => this.movie = movie);
+      (movie: Movie) => {
+        this.movie = movie;
+      });
   }
 
+  rating(i: number) {
+      if (this.movie.mark >= i) {
+        return 'fa fa-star';
+      }
+      if (i - this.movie.mark < 1) {
+        return 'fa fa-star-half-o';
+      }
+      return 'fa fa-star-o';
+  }
 }
