@@ -1,0 +1,11 @@
+<ngb-carousel class="carousel">
+
+  <span *ngFor="let movie of movies">
+    <ng-template ngbSlide>
+      <a [routerLink]="['movies', movie.title]">
+        <img class="carousel carousel-image" [src]="movie.imgURL" alt="Random first slide">
+      </a>
+    </ng-template>
+  </span>
+</ngb-carousel>
+

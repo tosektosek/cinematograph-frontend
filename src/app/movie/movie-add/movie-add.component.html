@@ -1,0 +1,69 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 ml-auto mr-auto">
+      <h1 style="color: antiquewhite">
+        Add Movie
+        <i class="fa fa-camera-retro" ></i>
+      </h1>
+
+      <hr>
+      <form #loginForm="ngForm" name="addMovieForm">
+        <div class="form-group">
+          <label for="title">Title:</label>
+          <input type="text" class="form-control"
+                 id="title" name="title"
+                 required
+                 [(ngModel)]="movie.title"
+                 #title="ngModel"
+                 placeholder="Title...">
+        </div>
+        <div class="alert alert-danger" *ngIf="title.invalid && (title.dirty || title.touched)">
+          Title is required
+        </div>
+
+        <div class="form-group">
+          <label for="genres">Genre:</label>
+          <input type="text" class="form-control"
+                 id="genres" name="genres"
+                 required
+                 [(ngModel)]="genreInput"
+                 #genres="ngModel"
+                 placeholder="Genres...">
+        </div>
+        <div class="alert alert-danger" *ngIf="genres.invalid && (genres.dirty || genres.touched)">
+          At least one genre is required
+        </div>
+
+        <div class="form-group">
+          <label for="releaseDate">releaseDate:</label>
+          <input type="date" class="form-control"
+                 id="releaseDate" name="releaseDate"
+                 required
+                 [(ngModel)]="movie.releaseDate"
+                 #releaseDate="ngModel"
+                 placeholder="Release Date...">
+        </div>
+        <div class="alert alert-danger" *ngIf="releaseDate.invalid && (releaseDate.dirty || releaseDate.touched)">
+          Release date is required
+        </div>
+
+        <div class="form-group">
+          <label for="imgUrl">IMG URL:</label>
+          <input type="text" class="form-control"
+                 id="imgUrl" name="imgUrl"
+                 required
+                 [(ngModel)]="movie.imgURL"
+                 #imgUrl="ngModel"
+                 placeholder="Img URL...">
+        </div>
+        <div class="alert alert-danger" *ngIf="imgUrl.invalid && (imgUrl.dirty || imgUrl.touched)">
+          Image URL is required
+        </div>
+      </form>
+      <button [disabled]="loginForm.invalid" type="submit" (click)="addMovie()" class="btn btn-success">Submit</button>
+      <button [routerLink]="['/']" class="btn btn-danger">Cancel</button>
+    </div>
+  </div>
+
+
+</div>
