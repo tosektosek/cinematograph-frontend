@@ -10,7 +10,7 @@ import {Movie} from '../movie.model';
 })
 export class MovieDetailsComponent implements OnInit {
 
-  movie: Movie = new Movie('', '', [], '', '', 0, 0, 0, 0, 0, [], [], [], );
+  movie: Movie = new Movie();
   constructor(private movieService: MovieService,
               private route: ActivatedRoute) { }
 

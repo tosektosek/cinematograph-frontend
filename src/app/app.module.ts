@@ -4,7 +4,6 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import {MovieService} from './movie/movie.service';
-import { MovieComponent } from './movie/movie/movie.component';
 import {RouterModule} from '@angular/router';
 import {movieRoutes} from './movie/routes';
 import { MovieDetailsComponent } from './movie/movie-details/movie-details.component';
@@ -14,15 +13,16 @@ import {HashLocationStrategy, LocationStrategy} from '@angular/common';
 import { NavComponent } from './shared/nav/nav.component';
 import { MainPageComponent } from './shared/main-page/main-page.component';
 import {sharedRoutes} from './shared/routes';
+import { MovieAddComponent } from './movie/movie-add/movie-add.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    MovieComponent,
     MovieDetailsComponent,
     NavComponent,
-    MainPageComponent
+    MainPageComponent,
+    MovieAddComponent
   ],
   imports: [
     BrowserModule,
