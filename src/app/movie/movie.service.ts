@@ -7,12 +7,16 @@ export class MovieService {
 
   constructor(private http: HttpClient) { }
 
-  private path = '/movie';
+  private path = '/server/movie';
   getMovieByTitle(title: String) {
     return this.http.get(this.path + '/' + title);
   }
 
   saveMovie(movie: Movie) {
     return this.http.post(this.path, movie);
+  }
+
+  getRandomMovies() {
+    return this.http.get(this.path + '/random');
   }
 }

@@ -28,12 +28,11 @@ import { MovieAddComponent } from './movie/movie-add/movie-add.component';
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    RouterModule.forRoot(sharedRoutes, {useHash: true}),
-    RouterModule.forRoot(movieRoutes, { useHash: true}),
+    RouterModule.forRoot(sharedRoutes),
+    RouterModule.forRoot(movieRoutes),
     NgbModule.forRoot()
   ],
-  providers: [MovieService,
-    {provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [MovieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
